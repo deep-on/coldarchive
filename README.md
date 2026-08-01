@@ -5,8 +5,16 @@ cloud or an external drive, and a shortcut stays where the file was.
 
 **→ https://deep-on.github.io/coldarchive/**
 
-This repository hosts the website only. ColdArchive itself is a paid macOS app;
-its source is not published here.
+## The restore script is here too
+
+ColdArchive moves a file and leaves a symlink. Alongside the files it writes
+[`RESTORE-ME.command`](restore/) — a 187-line POSIX `sh` script that puts everything back.
+
+It needs `sh` and `mv`. Not this app, not the internet, not even the Mac you started on.
+It is published so you can read it before trusting it, and so it keeps working if we don't.
+Public domain — [take it](restore/README.md).
+
+ColdArchive itself is a paid macOS app; its source is not published here.
 
 - [English](https://deep-on.github.io/coldarchive/)
 - [한국어](https://deep-on.github.io/coldarchive/ko/)

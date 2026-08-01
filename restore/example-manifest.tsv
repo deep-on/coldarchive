@@ -1,0 +1,6 @@
+# ColdArchive 복원 목록 / restore manifest
+# 원래위치<TAB>아카이브내 상대경로<TAB>바이트
+# original<TAB>relative-path-in-this-folder<TAB>bytes
+~/Downloads/conference-2019.zip	Downloads/conference-2019.zip	482929645
+~/Movies/wedding-raw.mov	Movies/wedding-raw.mov	9126544310
+~/Documents/old-taxes/2018.pdf	Documents/old-taxes/2018.pdf	2411900
