@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — ColdArchive</title>
+<meta name="robots" content="index,follow">
+
+<!-- 랜딩과 같은 규칙: 바깥 서버를 하나도 부르지 않는다.
+     개인정보 처리방침 페이지가 추적 스크립트를 달고 있으면 그 자체로 자기모순이다. -->
+<style>
+  :root{
+    --paper:#fbfcfe; --panel:#ffffff; --ink:#0f1722; --soft:#5a6878; --rule:#e2e9f0;
+    --band:#e9f5fd; --amber:#FCA044; --deep:#1219CD;
+    --s1:4px; --s2:8px; --s3:12px; --s4:16px; --s5:24px; --s6:32px; --s7:48px; --s8:72px;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{--paper:#0d141d; --panel:#18212d; --ink:#e6eef6; --soft:#94a4b6; --rule:#26323f;
+          --band:#1b2836; --deep:#93a7ff}
+  }
+  :root[data-theme="light"]{--paper:#fbfcfe;--panel:#fff;--ink:#0f1722;--soft:#5a6878;--rule:#e2e9f0;--band:#e9f5fd;--deep:#1219CD}
+  :root[data-theme="dark"]{--paper:#0d141d;--panel:#18212d;--ink:#e6eef6;--soft:#94a4b6;--rule:#26323f;--band:#1b2836;--deep:#93a7ff}
+
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--paper);color:var(--ink);
+       font:400 16.5px/1.78 -apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard","Noto Sans KR",sans-serif;
+       -webkit-font-smoothing:antialiased}
+  .wrap{max-width:660px;margin:0 auto;padding:0 var(--s5)}
+  a{color:var(--deep);text-underline-offset:3px}
+  :focus-visible{outline:2px solid var(--amber);outline-offset:3px;border-radius:4px}
+
+  header{padding:var(--s8) 0 var(--s5);border-bottom:1px solid var(--rule)}
+  .back{font-size:.88rem;color:var(--soft);text-decoration:none;display:inline-block;margin:0 0 var(--s4)}
+  .back:hover{color:var(--ink)}
+  h1{font-size:clamp(1.6rem,3.6vw,2.05rem);line-height:1.25;letter-spacing:-.03em;
+     margin:0 0 var(--s2);font-weight:750}
+  .updated{color:var(--soft);font-size:.86rem;margin:0}
+
+  /* 한 줄 요약 — 법률 문서에서 사람이 실제로 읽는 유일한 부분이 될 수도 있다.
+     그러니 여기에 진짜 결론을 적는다. 아래에서 뒤집지 않는다. */
+  .tldr{background:var(--band);border:1px solid var(--rule);border-radius:var(--s4);
+        padding:var(--s5);margin:var(--s6) 0 0;font-size:1.02rem}
+  .tldr p{margin:0}
+  .tldr b{font-weight:700}
+
+  main{padding:var(--s6) 0 var(--s8)}
+  h2{font-size:1.14rem;letter-spacing:-.015em;margin:var(--s7) 0 var(--s3);font-weight:700}
+  h2:first-of-type{margin-top:var(--s5)}
+  p{margin:0 0 var(--s3)}
+  ul{margin:0 0 var(--s3);padding-left:1.15em}
+  li{margin:0 0 var(--s2)}
+  b,strong{font-weight:660}
+  .soft{color:var(--soft)}
+  .small{font-size:.9rem}
+  pre{background:var(--panel);border:1px solid var(--rule);border-radius:10px;
+      padding:var(--s3) var(--s4);overflow-x:auto;margin:0 0 var(--s3)}
+  code{font:13px/1.7 ui-monospace,SFMono-Regular,Menlo,monospace}
+  p code{background:color-mix(in srgb,var(--ink) 7%,transparent);padding:2px 6px;border-radius:5px}
+
+  footer{padding:var(--s6) 0 var(--s8);border-top:1px solid var(--rule);
+         color:var(--soft);font-size:.89rem}
+  footer a{color:var(--soft)}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <a class="back" href="./">← ColdArchive</a>
+    <h1>Privacy Policy</h1>
+    <p class="updated">Last updated 1 August 2026</p>
+    <div class="tldr"><p><b>ColdArchive collects nothing.</b> The app doesn't have permission to reach the internet, so even if it wanted to send something, it couldn't. Below is how to verify that yourself, and the one exception — the optional weather backdrop.</p></div>
+  </header>
+
+  <main>
+    <h2>The app can't reach the internet</h2>
+<p>ColdArchive runs inside the macOS sandbox and does not hold the network entitlement (<code>com.apple.security.network.client</code>). Without it, macOS blocks the connection itself. Rather than asking you to trust us, here's how to check:</p>
+<pre><code>codesign -d --entitlements - /Applications/ColdArchive.app</code></pre>
+<p class="small soft">You'll see file permissions and the sandbox in the output, and no network entry.</p>
+
+<h2>What it does with your files</h2>
+<p>The app only ever looks inside <b>folders you picked yourself</b>. macOS blocks everything else.</p>
+<ul>
+  <li>It <b>moves</b> files. It doesn't read or analyse what's in them.</li>
+  <li>A shortcut (symlink) stays where the file was. Names and paths don't change.</li>
+  <li>The destination is a folder you chose — a cloud sync folder, an external drive, whatever. <b>The app just puts the file there.</b> Uploading is done by the Google Drive or iCloud app you already run, in its own way.</li>
+</ul>
+
+<h2>Logs</h2>
+<p>The app records what it moved and when. Those records <b>include file paths.</b></p>
+<ul>
+  <li>They live on this Mac (<code>~/Library/Logs/</code>) and <b>never leave it.</b></li>
+  <li>They're deleted automatically after 90 days by default. You can change that in settings.</li>
+  <li>We can't see them. Even when helping you troubleshoot, we only see what <b>you choose to send us.</b></li>
+</ul>
+
+<h2>The weather backdrop — the one exception</h2>
+<p>Showing real weather behind the mascot is <b>off by default.</b> If you never turn it on, none of this applies. The default, “seasonal scenery”, only reads the date and uses no internet at all.</p>
+<p>If you do turn it on, the internet connection is made by <b>a small helper installed alongside the app</b> (WeatherBridge), not by ColdArchive itself. That helper, in turn, <b>has no permission to touch your files.</b> That's the whole point of splitting the permissions in two.</p>
+<ul>
+  <li><b>What is sent:</b> the city name you typed. It goes to Apple's WeatherKit. What happens after that is covered by <a href="https://www.apple.com/legal/privacy/">Apple's Privacy Policy</a>.</li>
+  <li><b>There is no server of ours.</b> Nothing reaches Deep-On.</li>
+  <li><b>Location:</b> read once, only if you press “find my city”. The coordinates are used to look up a city name and are <b>never stored or transmitted</b> — only the city name remains. Type the city by hand and location is never read at all.</li>
+</ul>
+
+<h2>This website</h2>
+<p>This page has <b>no analytics, no ads, and not one external script.</b> Fonts and images are all served from the same place. No cookies are set.</p>
+<p>One honest footnote: this site is hosted on <b>GitHub Pages</b>, and GitHub records visitor IP addresses in its server logs. That part is outside our control, and we have no access to those logs. Details are in <a href="https://docs.github.com/site-policy/privacy-policies/github-privacy-statement">GitHub's Privacy Statement</a>.</p>
+
+<h2>Payment</h2>
+<p>We aren't taking payments yet. When we do, a payment provider will handle the transaction, and <b>we will never see or store your card number.</b> This document will be updated before that happens, not after.</p>
+
+<h2>Questions</h2>
+<p>If something here is unclear or wrong, <a href="https://github.com/deep-on/coldarchive/issues">open an issue</a>. It's public, so the answer helps the next person with the same question.</p>
+
+  </main>
+
+  <footer>
+    <p>ColdArchive · Deep-On Inc. · Questions? <a href="https://github.com/deep-on/coldarchive/issues">Open an issue</a>.</p>
+  </footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Terms of Service — ColdArchive</title>
+<meta name="robots" content="index,follow">
+
+<!-- 랜딩과 같은 규칙: 바깥 서버를 하나도 부르지 않는다.
+     개인정보 처리방침 페이지가 추적 스크립트를 달고 있으면 그 자체로 자기모순이다. -->
+<style>
+  :root{
+    --paper:#fbfcfe; --panel:#ffffff; --ink:#0f1722; --soft:#5a6878; --rule:#e2e9f0;
+    --band:#e9f5fd; --amber:#FCA044; --deep:#1219CD;
+    --s1:4px; --s2:8px; --s3:12px; --s4:16px; --s5:24px; --s6:32px; --s7:48px; --s8:72px;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{--paper:#0d141d; --panel:#18212d; --ink:#e6eef6; --soft:#94a4b6; --rule:#26323f;
+          --band:#1b2836; --deep:#93a7ff}
+  }
+  :root[data-theme="light"]{--paper:#fbfcfe;--panel:#fff;--ink:#0f1722;--soft:#5a6878;--rule:#e2e9f0;--band:#e9f5fd;--deep:#1219CD}
+  :root[data-theme="dark"]{--paper:#0d141d;--panel:#18212d;--ink:#e6eef6;--soft:#94a4b6;--rule:#26323f;--band:#1b2836;--deep:#93a7ff}
+
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--paper);color:var(--ink);
+       font:400 16.5px/1.78 -apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard","Noto Sans KR",sans-serif;
+       -webkit-font-smoothing:antialiased}
+  .wrap{max-width:660px;margin:0 auto;padding:0 var(--s5)}
+  a{color:var(--deep);text-underline-offset:3px}
+  :focus-visible{outline:2px solid var(--amber);outline-offset:3px;border-radius:4px}
+
+  header{padding:var(--s8) 0 var(--s5);border-bottom:1px solid var(--rule)}
+  .back{font-size:.88rem;color:var(--soft);text-decoration:none;display:inline-block;margin:0 0 var(--s4)}
+  .back:hover{color:var(--ink)}
+  h1{font-size:clamp(1.6rem,3.6vw,2.05rem);line-height:1.25;letter-spacing:-.03em;
+     margin:0 0 var(--s2);font-weight:750}
+  .updated{color:var(--soft);font-size:.86rem;margin:0}
+
+  /* 한 줄 요약 — 법률 문서에서 사람이 실제로 읽는 유일한 부분이 될 수도 있다.
+     그러니 여기에 진짜 결론을 적는다. 아래에서 뒤집지 않는다. */
+  .tldr{background:var(--band);border:1px solid var(--rule);border-radius:var(--s4);
+        padding:var(--s5);margin:var(--s6) 0 0;font-size:1.02rem}
+  .tldr p{margin:0}
+  .tldr b{font-weight:700}
+
+  main{padding:var(--s6) 0 var(--s8)}
+  h2{font-size:1.14rem;letter-spacing:-.015em;margin:var(--s7) 0 var(--s3);font-weight:700}
+  h2:first-of-type{margin-top:var(--s5)}
+  p{margin:0 0 var(--s3)}
+  ul{margin:0 0 var(--s3);padding-left:1.15em}
+  li{margin:0 0 var(--s2)}
+  b,strong{font-weight:660}
+  .soft{color:var(--soft)}
+  .small{font-size:.9rem}
+  pre{background:var(--panel);border:1px solid var(--rule);border-radius:10px;
+      padding:var(--s3) var(--s4);overflow-x:auto;margin:0 0 var(--s3)}
+  code{font:13px/1.7 ui-monospace,SFMono-Regular,Menlo,monospace}
+  p code{background:color-mix(in srgb,var(--ink) 7%,transparent);padding:2px 6px;border-radius:5px}
+
+  footer{padding:var(--s6) 0 var(--s8);border-top:1px solid var(--rule);
+         color:var(--soft);font-size:.89rem}
+  footer a{color:var(--soft)}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <a class="back" href="./">← ColdArchive</a>
+    <h1>Terms of Service</h1>
+    <p class="updated">Last updated 1 August 2026</p>
+    <div class="tldr"><p><b>Buy it once, keep using it.</b> No subscription, no auto-renewal. But since this app moves your files, let's be clear about one thing: <b>backups are still your job.</b> Below is why, and what we've built to keep you safe anyway.</p></div>
+  </header>
+
+  <main>
+    <h2>What you're buying</h2>
+<p>Buying ColdArchive gives you <b>the right to use it, with no time limit.</b></p>
+<ul>
+  <li><b>Personal license</b> — one Mac that you use.</li>
+  <li><b>Family license</b> — up to three Macs in the same household.</li>
+  <li>It isn't a subscription. You pay once and are never billed again.</li>
+  <li>Updates within the same major version (1.0 → 1.4) are free. The next major version (2.0) may be a paid upgrade — we'll tell you before that happens.</li>
+</ul>
+
+<h2>Refunds</h2>
+<p>Try it, and if it isn't for you, tell us <b>within 14 days</b> of buying. Full refund, no questions. It's software, so there's nothing to deduct for “usage”.</p>
+
+<h2>Backups are still your job</h2>
+<p>We won't be vague about this. ColdArchive is <b>a tool that moves files</b>, and every tool that moves files carries risk. Disks fail, cloud accounts get locked, and we may have bugs we haven't found.</p>
+<p><b>This app is not a backup.</b> Keep using Time Machine or whatever you use. That said, here's what we've built so the risk isn't yours alone:</p>
+<ul>
+  <li>You <b>see the list first</b>, and nothing is touched until you say so.</li>
+  <li>Turn on <b>rehearsal</b> and it only observes for a few days — any file used even once drops off the list.</li>
+  <li>A <b>restore script</b> is placed in the archive folder. Everything goes home without this app, without internet, without even the Mac you started on.</li>
+  <li>Files inside git repositories, hidden files, and any folder you exclude were never candidates.</li>
+</ul>
+
+<h2>Warranty and limits</h2>
+<p>This software is provided <b>as is</b>. We make no warranties, express or implied, including fitness for a particular purpose. To the extent the law allows, Deep-On Inc. is not liable for data loss or for indirect or incidental damages arising from use of this software, and in any case total liability will not exceed <b>what you paid.</b></p>
+<p>That's the standard paragraph every software licence carries, but it doesn't mean we'll shrug. If something goes wrong, <a href="https://github.com/deep-on/coldarchive/issues">tell us.</a> What can be fixed, gets fixed.</p>
+
+<h2>What you may not do</h2>
+<ul>
+  <li>Don't resell the software, and don't share or distribute your license key.</li>
+  <li>Don't reverse-engineer, copy, or redistribute modified versions. (The weather helper will be published separately as source; that part follows its own licence.)</li>
+</ul>
+
+<h2>If these terms change</h2>
+<p>The “last updated” date at the top changes with them. We won't <b>retroactively reduce the rights</b> of anyone who has already bought.</p>
+
+<h2>Governing law</h2>
+<p>These terms are governed by the laws of the Republic of Korea, and disputes fall under Korean courts. Where consumer protection law in your country grants you stronger rights, those rights come first.</p>
+
+  </main>
+
+  <footer>
+    <p>ColdArchive · Deep-On Inc. · Questions? <a href="https://github.com/deep-on/coldarchive/issues">Open an issue</a>.</p>
+  </footer>
+</div>
+</body>
+</html>
