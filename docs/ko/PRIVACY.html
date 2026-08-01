@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>개인정보 처리방침 — ColdArchive</title>
+<meta name="robots" content="index,follow">
+
+<!-- 랜딩과 같은 규칙: 바깥 서버를 하나도 부르지 않는다.
+     개인정보 처리방침 페이지가 추적 스크립트를 달고 있으면 그 자체로 자기모순이다. -->
+<style>
+  :root{
+    --paper:#fbfcfe; --panel:#ffffff; --ink:#0f1722; --soft:#5a6878; --rule:#e2e9f0;
+    --band:#e9f5fd; --amber:#FCA044; --deep:#1219CD;
+    --s1:4px; --s2:8px; --s3:12px; --s4:16px; --s5:24px; --s6:32px; --s7:48px; --s8:72px;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{--paper:#0d141d; --panel:#18212d; --ink:#e6eef6; --soft:#94a4b6; --rule:#26323f;
+          --band:#1b2836; --deep:#93a7ff}
+  }
+  :root[data-theme="light"]{--paper:#fbfcfe;--panel:#fff;--ink:#0f1722;--soft:#5a6878;--rule:#e2e9f0;--band:#e9f5fd;--deep:#1219CD}
+  :root[data-theme="dark"]{--paper:#0d141d;--panel:#18212d;--ink:#e6eef6;--soft:#94a4b6;--rule:#26323f;--band:#1b2836;--deep:#93a7ff}
+
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--paper);color:var(--ink);
+       font:400 16.5px/1.78 -apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard","Noto Sans KR",sans-serif;
+       -webkit-font-smoothing:antialiased}
+  .wrap{max-width:660px;margin:0 auto;padding:0 var(--s5)}
+  a{color:var(--deep);text-underline-offset:3px}
+  :focus-visible{outline:2px solid var(--amber);outline-offset:3px;border-radius:4px}
+
+  header{padding:var(--s8) 0 var(--s5);border-bottom:1px solid var(--rule)}
+  .back{font-size:.88rem;color:var(--soft);text-decoration:none;display:inline-block;margin:0 0 var(--s4)}
+  .back:hover{color:var(--ink)}
+  h1{font-size:clamp(1.6rem,3.6vw,2.05rem);line-height:1.25;letter-spacing:-.03em;
+     margin:0 0 var(--s2);font-weight:750}
+  .updated{color:var(--soft);font-size:.86rem;margin:0}
+
+  /* 한 줄 요약 — 법률 문서에서 사람이 실제로 읽는 유일한 부분이 될 수도 있다.
+     그러니 여기에 진짜 결론을 적는다. 아래에서 뒤집지 않는다. */
+  .tldr{background:var(--band);border:1px solid var(--rule);border-radius:var(--s4);
+        padding:var(--s5);margin:var(--s6) 0 0;font-size:1.02rem}
+  .tldr p{margin:0}
+  .tldr b{font-weight:700}
+
+  main{padding:var(--s6) 0 var(--s8)}
+  h2{font-size:1.14rem;letter-spacing:-.015em;margin:var(--s7) 0 var(--s3);font-weight:700}
+  h2:first-of-type{margin-top:var(--s5)}
+  p{margin:0 0 var(--s3)}
+  ul{margin:0 0 var(--s3);padding-left:1.15em}
+  li{margin:0 0 var(--s2)}
+  b,strong{font-weight:660}
+  .soft{color:var(--soft)}
+  .small{font-size:.9rem}
+  pre{background:var(--panel);border:1px solid var(--rule);border-radius:10px;
+      padding:var(--s3) var(--s4);overflow-x:auto;margin:0 0 var(--s3)}
+  code{font:13px/1.7 ui-monospace,SFMono-Regular,Menlo,monospace}
+  p code{background:color-mix(in srgb,var(--ink) 7%,transparent);padding:2px 6px;border-radius:5px}
+
+  footer{padding:var(--s6) 0 var(--s8);border-top:1px solid var(--rule);
+         color:var(--soft);font-size:.89rem}
+  footer a{color:var(--soft)}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <a class="back" href="./">← ColdArchive</a>
+    <h1>개인정보 처리방침</h1>
+    <p class="updated">최종 수정 2026년 8월 1일</p>
+    <div class="tldr"><p><b>ColdArchive는 개인정보를 수집하지 않습니다.</b> 앱 본체에는 인터넷에 연결할 권한 자체가 없어서, 수집하고 싶어도 보낼 방법이 없습니다. 아래는 그 말이 사실인지 확인하는 방법과, 유일한 예외인 날씨 기능에 대한 설명입니다.</p></div>
+  </header>
+
+  <main>
+    <h2>앱은 인터넷에 연결할 수 없습니다</h2>
+<p>ColdArchive 본체는 macOS 샌드박스 안에서 돌고, 네트워크 권한(<code>com.apple.security.network.client</code>)을 가지고 있지 않습니다. 권한이 없으면 macOS가 연결 자체를 막습니다. 저희를 믿어 달라는 말 대신, 직접 확인하실 수 있습니다.</p>
+<pre><code>codesign -d --entitlements - /Applications/ColdArchive.app</code></pre>
+<p class="small soft">출력에 파일 권한과 샌드박스만 나오고 네트워크 항목이 없다는 것을 보실 수 있습니다.</p>
+
+<h2>파일은 어떻게 다루나요</h2>
+<p>앱은 <b>사용자가 직접 고른 폴더만</b> 봅니다. macOS가 그 밖의 폴더는 접근을 막습니다.</p>
+<ul>
+  <li>파일을 <b>옮기기만</b> 합니다. 내용을 읽거나 분석하지 않습니다.</li>
+  <li>옮긴 자리에는 바로가기(심링크)를 남깁니다. 파일 이름과 경로는 그대로입니다.</li>
+  <li>보관 위치는 사용자가 지정한 폴더입니다 — 클라우드 동기화 폴더든 외장 드라이브든, <b>그 폴더에 파일을 놓을 뿐</b>입니다. 업로드는 이미 쓰고 계신 Google Drive·iCloud 같은 앱이 자기 방식대로 처리합니다.</li>
+</ul>
+
+<h2>기록(로그)</h2>
+<p>앱은 무엇을 언제 옮겼는지 기록을 남깁니다. 이 기록에는 <b>파일 경로가 포함됩니다.</b></p>
+<ul>
+  <li>저장 위치는 이 맥 안(<code>~/Library/Logs/</code>)이고, <b>밖으로 나가지 않습니다.</b></li>
+  <li>기본 90일 뒤 자동으로 지워집니다. 기간은 설정에서 바꾸실 수 있습니다.</li>
+  <li>저희는 이 기록을 볼 수 없습니다. 문제 해결을 도와드릴 때도 <b>사용자가 직접 보내 주셔야</b> 볼 수 있습니다.</li>
+</ul>
+
+<h2>날씨 기능 — 유일한 예외</h2>
+<p>마스코트 배경에 실제 날씨를 표시하는 기능은 <b>기본으로 꺼져 있습니다.</b> 켜지 않으시면 이 항목 전체가 해당되지 않습니다. 기본값인 “계절 풍경”은 날짜만 보므로 인터넷을 쓰지 않습니다.</p>
+<p>켜시면, 인터넷에 연결하는 일은 본체가 아니라 <b>따로 설치되는 작은 도우미</b>(WeatherBridge)가 맡습니다. 이 도우미는 반대로 <b>파일에 접근할 권한이 없습니다.</b> 권한을 두 조각으로 나눈 이유가 이것입니다.</p>
+<ul>
+  <li><b>보내는 것:</b> 사용자가 적어 둔 도시 이름. 받는 곳은 Apple의 WeatherKit입니다. 이후 처리는 <a href="https://www.apple.com/legal/privacy/">Apple 개인정보 처리방침</a>을 따릅니다.</li>
+  <li><b>저희 서버는 없습니다.</b> 어떤 정보도 Deep-On으로 오지 않습니다.</li>
+  <li><b>위치:</b> “현재 위치로 찾기”를 누르셨을 때만 한 번 읽습니다. 읽은 좌표는 도시 이름으로 바꾸는 데만 쓰이고 <b>저장하지도, 전송하지도 않습니다</b> — 남는 것은 도시 이름뿐입니다. 도시를 손으로 적으시면 위치는 아예 읽지 않습니다.</li>
+</ul>
+
+<h2>이 웹사이트</h2>
+<p>이 페이지에는 <b>분석 도구도, 광고도, 외부 스크립트도 하나 없습니다.</b> 글꼴과 그림까지 전부 같은 서버에 있습니다. 쿠키를 심지 않습니다.</p>
+<p>다만 정직하게 덧붙입니다. 이 사이트는 <b>GitHub Pages</b>에서 제공되고, GitHub은 서버 기록에 방문자 IP 주소를 남깁니다. 이 부분은 저희가 통제하지 못하며, 저희는 그 기록에 접근할 수 없습니다. 자세한 내용은 <a href="https://docs.github.com/site-policy/privacy-policies/github-privacy-statement">GitHub 개인정보 성명</a>에 있습니다.</p>
+
+<h2>결제</h2>
+<p>현재는 결제를 받지 않습니다. 판매를 시작하면 결제 대행사가 결제 정보를 처리하며, <b>저희는 카드 번호를 보지도 보관하지도 않습니다.</b> 대행사가 정해지면 이 문서를 먼저 갱신하겠습니다.</p>
+
+<h2>문의</h2>
+<p>이 문서에 대한 질문이나 지적은 <a href="https://github.com/deep-on/coldarchive/issues">GitHub Issues</a>로 주세요. 공개된 곳이라 같은 궁금증을 가진 다른 분에게도 도움이 됩니다.</p>
+
+  </main>
+
+  <footer>
+    <p>ColdArchive · Deep-On Inc. · 문의는 <a href="https://github.com/deep-on/coldarchive/issues">GitHub Issues</a>로 주세요.</p>
+  </footer>
+</div>
+</body>
+</html>

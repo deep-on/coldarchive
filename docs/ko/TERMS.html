@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>서비스 약관 — ColdArchive</title>
+<meta name="robots" content="index,follow">
+
+<!-- 랜딩과 같은 규칙: 바깥 서버를 하나도 부르지 않는다.
+     개인정보 처리방침 페이지가 추적 스크립트를 달고 있으면 그 자체로 자기모순이다. -->
+<style>
+  :root{
+    --paper:#fbfcfe; --panel:#ffffff; --ink:#0f1722; --soft:#5a6878; --rule:#e2e9f0;
+    --band:#e9f5fd; --amber:#FCA044; --deep:#1219CD;
+    --s1:4px; --s2:8px; --s3:12px; --s4:16px; --s5:24px; --s6:32px; --s7:48px; --s8:72px;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{--paper:#0d141d; --panel:#18212d; --ink:#e6eef6; --soft:#94a4b6; --rule:#26323f;
+          --band:#1b2836; --deep:#93a7ff}
+  }
+  :root[data-theme="light"]{--paper:#fbfcfe;--panel:#fff;--ink:#0f1722;--soft:#5a6878;--rule:#e2e9f0;--band:#e9f5fd;--deep:#1219CD}
+  :root[data-theme="dark"]{--paper:#0d141d;--panel:#18212d;--ink:#e6eef6;--soft:#94a4b6;--rule:#26323f;--band:#1b2836;--deep:#93a7ff}
+
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--paper);color:var(--ink);
+       font:400 16.5px/1.78 -apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard","Noto Sans KR",sans-serif;
+       -webkit-font-smoothing:antialiased}
+  .wrap{max-width:660px;margin:0 auto;padding:0 var(--s5)}
+  a{color:var(--deep);text-underline-offset:3px}
+  :focus-visible{outline:2px solid var(--amber);outline-offset:3px;border-radius:4px}
+
+  header{padding:var(--s8) 0 var(--s5);border-bottom:1px solid var(--rule)}
+  .back{font-size:.88rem;color:var(--soft);text-decoration:none;display:inline-block;margin:0 0 var(--s4)}
+  .back:hover{color:var(--ink)}
+  h1{font-size:clamp(1.6rem,3.6vw,2.05rem);line-height:1.25;letter-spacing:-.03em;
+     margin:0 0 var(--s2);font-weight:750}
+  .updated{color:var(--soft);font-size:.86rem;margin:0}
+
+  /* 한 줄 요약 — 법률 문서에서 사람이 실제로 읽는 유일한 부분이 될 수도 있다.
+     그러니 여기에 진짜 결론을 적는다. 아래에서 뒤집지 않는다. */
+  .tldr{background:var(--band);border:1px solid var(--rule);border-radius:var(--s4);
+        padding:var(--s5);margin:var(--s6) 0 0;font-size:1.02rem}
+  .tldr p{margin:0}
+  .tldr b{font-weight:700}
+
+  main{padding:var(--s6) 0 var(--s8)}
+  h2{font-size:1.14rem;letter-spacing:-.015em;margin:var(--s7) 0 var(--s3);font-weight:700}
+  h2:first-of-type{margin-top:var(--s5)}
+  p{margin:0 0 var(--s3)}
+  ul{margin:0 0 var(--s3);padding-left:1.15em}
+  li{margin:0 0 var(--s2)}
+  b,strong{font-weight:660}
+  .soft{color:var(--soft)}
+  .small{font-size:.9rem}
+  pre{background:var(--panel);border:1px solid var(--rule);border-radius:10px;
+      padding:var(--s3) var(--s4);overflow-x:auto;margin:0 0 var(--s3)}
+  code{font:13px/1.7 ui-monospace,SFMono-Regular,Menlo,monospace}
+  p code{background:color-mix(in srgb,var(--ink) 7%,transparent);padding:2px 6px;border-radius:5px}
+
+  footer{padding:var(--s6) 0 var(--s8);border-top:1px solid var(--rule);
+         color:var(--soft);font-size:.89rem}
+  footer a{color:var(--soft)}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <a class="back" href="./">← ColdArchive</a>
+    <h1>서비스 약관</h1>
+    <p class="updated">최종 수정 2026년 8월 1일</p>
+    <div class="tldr"><p><b>한 번 사시면 계속 쓰실 수 있습니다.</b> 구독이 아니고 자동 갱신도 없습니다. 다만 이 앱은 사용자의 파일을 옮기므로, <b>백업은 여전히 사용자의 몫</b>이라는 점을 분명히 해 두겠습니다. 아래에 그 이유와, 저희가 대신 준비해 둔 안전장치를 적었습니다.</p></div>
+  </header>
+
+  <main>
+    <h2>무엇을 사시는 건가요</h2>
+<p>ColdArchive를 사시면 <b>기간 제한 없는 사용 권리</b>를 갖습니다.</p>
+<ul>
+  <li><b>개인 라이선스</b> — 본인이 쓰는 맥 1대.</li>
+  <li><b>가족 라이선스</b> — 같은 가정에서 쓰는 맥 3대까지.</li>
+  <li>구독이 아닙니다. 결제는 한 번이고, 자동으로 다시 청구되지 않습니다.</li>
+  <li>같은 메이저 버전 안의 업데이트(예: 1.0 → 1.4)는 무료입니다. 다음 메이저 버전(예: 2.0)은 유료 업그레이드가 될 수 있습니다 — 그때는 미리 알려 드립니다.</li>
+</ul>
+
+<h2>환불</h2>
+<p>받아 보시고 마음에 안 드시면 <b>구매 후 14일 안에</b> 말씀해 주세요. 이유를 묻지 않고 전액 환불해 드립니다. 소프트웨어라 “쓴 만큼 빼고”가 없습니다.</p>
+
+<h2>백업은 여전히 사용자의 몫입니다</h2>
+<p>이 부분은 흐리게 쓰지 않겠습니다. ColdArchive는 <b>파일을 옮기는 도구</b>이고, 파일을 옮기는 모든 도구에는 위험이 따릅니다. 디스크가 고장 나거나, 클라우드 계정이 잠기거나, 저희가 미처 못 잡은 버그가 있을 수 있습니다.</p>
+<p><b>이 앱은 백업을 대신하지 않습니다.</b> Time Machine이나 다른 백업을 계속 쓰세요. 그래서 저희는 이런 것들을 준비해 두었습니다.</p>
+<ul>
+  <li>옮기기 전에 <b>목록으로 먼저 보여 드리고</b>, 확인하시기 전에는 아무 파일도 건드리지 않습니다.</li>
+  <li><b>리허설</b>을 켜면 며칠 관찰만 하고, 그 사이 한 번이라도 쓰인 파일은 대상에서 빠집니다.</li>
+  <li>보관함에 <b>되돌리기 스크립트</b>를 같이 넣어 둡니다. 이 앱도, 인터넷도, 원래 쓰시던 맥도 없이 전부 제자리로 돌릴 수 있습니다.</li>
+  <li>git 저장소 안의 파일, 숨김 파일, 지정하신 제외 폴더는 처음부터 대상이 아닙니다.</li>
+</ul>
+
+<h2>보증과 책임의 한계</h2>
+<p>이 소프트웨어는 <b>있는 그대로</b> 제공됩니다. 특정 목적에의 적합성을 포함해 명시적·묵시적 보증을 하지 않습니다. 법이 허용하는 범위에서, Deep-On Inc.는 이 소프트웨어의 사용으로 발생한 데이터 손실이나 간접·부수적 손해에 대해 책임지지 않으며, 어떤 경우에도 책임의 총액은 <b>사용자가 지불한 금액</b>을 넘지 않습니다.</p>
+<p>이건 소프트웨어 약관의 상투적인 문장이지만, 그렇다고 저희가 손을 놓겠다는 뜻은 아닙니다. 문제가 생기면 <a href="https://github.com/deep-on/coldarchive/issues">알려 주세요.</a> 고칠 수 있는 건 고칩니다.</p>
+
+<h2>하시면 안 되는 것</h2>
+<ul>
+  <li>소프트웨어를 재판매하거나, 라이선스 키를 공유·배포하지 마세요.</li>
+  <li>역공학·복제·개작 후 배포하지 마세요. (다만 날씨 도우미는 별도로 소스를 공개할 예정이며, 그쪽은 해당 라이선스를 따릅니다.)</li>
+</ul>
+
+<h2>약관이 바뀌면</h2>
+<p>이 문서가 바뀌면 위의 “최종 수정” 날짜가 함께 바뀝니다. 이미 구매하신 분의 권리를 <b>소급해서 줄이지 않습니다.</b></p>
+
+<h2>준거법</h2>
+<p>이 약관은 대한민국 법을 따르며, 분쟁은 대한민국 법원을 관할로 합니다. 거주 국가의 소비자 보호법이 사용자에게 더 유리한 권리를 주는 경우, 그 권리가 우선합니다.</p>
+
+  </main>
+
+  <footer>
+    <p>ColdArchive · Deep-On Inc. · 문의는 <a href="https://github.com/deep-on/coldarchive/issues">GitHub Issues</a>로 주세요.</p>
+  </footer>
+</div>
+</body>
+</html>
