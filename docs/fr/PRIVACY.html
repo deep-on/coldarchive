@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Politique de confidentialité — ColdArchive</title>
+<meta name="robots" content="index,follow">
+
+<!-- 랜딩과 같은 규칙: 바깥 서버를 하나도 부르지 않는다.
+     개인정보 처리방침 페이지가 추적 스크립트를 달고 있으면 그 자체로 자기모순이다. -->
+<style>
+  :root{
+    --paper:#fbfcfe; --panel:#ffffff; --ink:#0f1722; --soft:#5a6878; --rule:#e2e9f0;
+    --band:#e9f5fd; --amber:#FCA044; --deep:#1219CD;
+    --s1:4px; --s2:8px; --s3:12px; --s4:16px; --s5:24px; --s6:32px; --s7:48px; --s8:72px;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{--paper:#0d141d; --panel:#18212d; --ink:#e6eef6; --soft:#94a4b6; --rule:#26323f;
+          --band:#1b2836; --deep:#93a7ff}
+  }
+  :root[data-theme="light"]{--paper:#fbfcfe;--panel:#fff;--ink:#0f1722;--soft:#5a6878;--rule:#e2e9f0;--band:#e9f5fd;--deep:#1219CD}
+  :root[data-theme="dark"]{--paper:#0d141d;--panel:#18212d;--ink:#e6eef6;--soft:#94a4b6;--rule:#26323f;--band:#1b2836;--deep:#93a7ff}
+
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--paper);color:var(--ink);
+       font:400 16.5px/1.78 -apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard","Noto Sans KR",sans-serif;
+       -webkit-font-smoothing:antialiased}
+  .wrap{max-width:660px;margin:0 auto;padding:0 var(--s5)}
+  a{color:var(--deep);text-underline-offset:3px}
+  :focus-visible{outline:2px solid var(--amber);outline-offset:3px;border-radius:4px}
+
+  header{padding:var(--s8) 0 var(--s5);border-bottom:1px solid var(--rule)}
+  .back{font-size:.88rem;color:var(--soft);text-decoration:none;display:inline-block;margin:0 0 var(--s4)}
+  .back:hover{color:var(--ink)}
+  h1{font-size:clamp(1.6rem,3.6vw,2.05rem);line-height:1.25;letter-spacing:-.03em;
+     margin:0 0 var(--s2);font-weight:750}
+  .updated{color:var(--soft);font-size:.86rem;margin:0}
+
+  /* 한 줄 요약 — 법률 문서에서 사람이 실제로 읽는 유일한 부분이 될 수도 있다.
+     그러니 여기에 진짜 결론을 적는다. 아래에서 뒤집지 않는다. */
+  .tldr{background:var(--band);border:1px solid var(--rule);border-radius:var(--s4);
+        padding:var(--s5);margin:var(--s6) 0 0;font-size:1.02rem}
+  .tldr p{margin:0}
+  .tldr b{font-weight:700}
+
+  main{padding:var(--s6) 0 var(--s8)}
+  h2{font-size:1.14rem;letter-spacing:-.015em;margin:var(--s7) 0 var(--s3);font-weight:700}
+  h2:first-of-type{margin-top:var(--s5)}
+  p{margin:0 0 var(--s3)}
+  ul{margin:0 0 var(--s3);padding-left:1.15em}
+  li{margin:0 0 var(--s2)}
+  b,strong{font-weight:660}
+  .soft{color:var(--soft)}
+  .small{font-size:.9rem}
+  pre{background:var(--panel);border:1px solid var(--rule);border-radius:10px;
+      padding:var(--s3) var(--s4);overflow-x:auto;margin:0 0 var(--s3)}
+  code{font:13px/1.7 ui-monospace,SFMono-Regular,Menlo,monospace}
+  p code{background:color-mix(in srgb,var(--ink) 7%,transparent);padding:2px 6px;border-radius:5px}
+
+  footer{padding:var(--s6) 0 var(--s8);border-top:1px solid var(--rule);
+         color:var(--soft);font-size:.89rem}
+  footer a{color:var(--soft)}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <a class="back" href="./">← ColdArchive</a>
+    <h1>Politique de confidentialité</h1>
+    <p class="updated">Dernière mise à jour le 1er août 2026</p>
+    <div class="tldr"><p><b>ColdArchive ne collecte rien.</b> L'application n'a même pas l'autorisation d'accéder à Internet : elle ne pourrait rien envoyer même si elle le voulait. Vous trouverez ci-dessous comment le vérifier vous-même, et la seule exception — la météo en arrière-plan.</p></div>
+  </header>
+
+  <main>
+    <h2>L'application ne peut pas accéder à Internet</h2>
+<p>ColdArchive fonctionne dans le bac à sable de macOS et ne possède pas l'autorisation réseau (<code>com.apple.security.network.client</code>). Sans elle, macOS bloque la connexion de lui-même. Plutôt que de vous demander de nous croire, voici comment vérifier :</p>
+<pre><code>codesign -d --entitlements - /Applications/ColdArchive.app</code></pre>
+<p class="small soft">La sortie affiche les droits sur les fichiers et le bac à sable, et aucune entrée réseau.</p>
+
+<h2>Ce qu'elle fait de vos fichiers</h2>
+<p>L'application ne regarde que <b>les dossiers que vous avez choisis vous-même</b>. macOS bloque tout le reste.</p>
+<ul>
+  <li>Elle <b>déplace</b> les fichiers. Elle ne lit pas et n'analyse pas ce qu'ils contiennent.</li>
+  <li>Un raccourci (lien symbolique) reste à la place du fichier. Les noms et les chemins ne changent pas.</li>
+  <li>La destination est un dossier que vous avez choisi — un dossier de synchronisation cloud, un disque externe, ce que vous voulez. <b>L'application se contente d'y déposer le fichier.</b> L'envoi, lui, est assuré par l'application Google Drive ou iCloud que vous utilisez déjà, à sa manière.</li>
+</ul>
+
+<h2>Journaux</h2>
+<p>L'application note ce qu'elle a déplacé et quand. Ces entrées <b>contiennent des chemins de fichiers.</b></p>
+<ul>
+  <li>Elles restent sur ce Mac (<code>~/Library/Logs/</code>) et <b>n'en sortent jamais.</b></li>
+  <li>Elles sont supprimées automatiquement au bout de 90 jours par défaut. Vous pouvez modifier ce délai dans les réglages.</li>
+  <li>Nous ne pouvons pas les consulter. Même lorsque nous vous aidons à résoudre un problème, nous ne voyons que ce que <b>vous choisissez de nous envoyer.</b></li>
+</ul>
+
+<h2>La météo en arrière-plan — la seule exception</h2>
+<p>Afficher la météo réelle derrière la mascotte est <b>désactivé par défaut.</b> Si vous ne l'activez jamais, rien de tout ceci ne s'applique. Le réglage par défaut, « paysage de saison », ne lit que la date et n'utilise aucune connexion.</p>
+<p>Si vous l'activez, la connexion est établie par <b>un petit assistant installé à côté de l'application</b> (WeatherBridge), et non par ColdArchive. Cet assistant, à l'inverse, <b>n'a aucun droit d'accès à vos fichiers.</b> C'est tout l'intérêt d'avoir séparé les autorisations en deux.</p>
+<ul>
+  <li><b>Ce qui est envoyé :</b> le nom de ville que vous avez saisi. Il part vers WeatherKit d'Apple. Ce qui se passe ensuite relève de la <a href="https://www.apple.com/legal/privacy/">politique de confidentialité d'Apple</a>.</li>
+  <li><b>Nous n'avons aucun serveur.</b> Rien ne parvient à Deep-On.</li>
+  <li><b>Localisation :</b> lue une seule fois, et uniquement si vous appuyez sur « trouver ma ville ». Les coordonnées servent à retrouver un nom de ville et ne sont <b>ni conservées ni transmises</b> — seul le nom demeure. Si vous saisissez la ville à la main, la localisation n'est jamais lue.</li>
+</ul>
+
+<h2>Ce site web</h2>
+<p>Cette page n'a <b>aucun outil d'analyse, aucune publicité et pas un seul script externe.</b> Les polices et les images proviennent toutes du même endroit. Aucun cookie n'est déposé.</p>
+<p>Une note en toute honnêteté : ce site est hébergé sur <b>GitHub Pages</b>, et GitHub consigne les adresses IP des visiteurs dans ses journaux de serveur. Cela échappe à notre contrôle et nous n'avons pas accès à ces journaux. Les détails figurent dans la <a href="https://docs.github.com/site-policy/privacy-policies/github-privacy-statement">déclaration de confidentialité de GitHub</a>.</p>
+
+<h2>Paiement</h2>
+<p>Le paiement est traité par <b>Paddle</b>, qui est le vendeur légal pour chaque achat. Vos données bancaires vont à Paddle et <b>ne nous parviennent jamais</b> — nous ne pouvons ni les voir ni les conserver.</p>
+<p>Ce qui nous parvient, c'est <b>votre adresse e-mail</b>, afin de vous envoyer votre clé de licence. Elle transite par Keygen, qui émet la clé, et Resend, qui achemine le message. Elle ne sert à rien d'autre : ni newsletter, ni profilage, et elle n'est jamais vendue ni transmise. Écrivez à <a href="mailto:support@deepon.kr">support@deepon.kr</a> et nous la supprimons.</p>
+
+<h2>Questions</h2>
+<p>Si quelque chose ici vous semble flou ou inexact, écrivez à <a href="mailto:support@deepon.kr">support@deepon.kr</a> ou <a href="https://github.com/deep-on/coldarchive/issues">ouvrez un ticket</a>. Nous répondons sous deux jours ouvrés.</p>
+
+  </main>
+
+  <footer>
+    <p>ColdArchive · Deep-On Inc. · <a href="mailto:support@deepon.kr">support@deepon.kr</a> · <a href="https://github.com/deep-on/coldarchive/issues">Issues</a></p>
+  </footer>
+</div>
+</body>
+</html>

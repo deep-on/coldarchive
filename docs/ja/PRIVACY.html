@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>プライバシーポリシー — ColdArchive</title>
+<meta name="robots" content="index,follow">
+
+<!-- 랜딩과 같은 규칙: 바깥 서버를 하나도 부르지 않는다.
+     개인정보 처리방침 페이지가 추적 스크립트를 달고 있으면 그 자체로 자기모순이다. -->
+<style>
+  :root{
+    --paper:#fbfcfe; --panel:#ffffff; --ink:#0f1722; --soft:#5a6878; --rule:#e2e9f0;
+    --band:#e9f5fd; --amber:#FCA044; --deep:#1219CD;
+    --s1:4px; --s2:8px; --s3:12px; --s4:16px; --s5:24px; --s6:32px; --s7:48px; --s8:72px;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{--paper:#0d141d; --panel:#18212d; --ink:#e6eef6; --soft:#94a4b6; --rule:#26323f;
+          --band:#1b2836; --deep:#93a7ff}
+  }
+  :root[data-theme="light"]{--paper:#fbfcfe;--panel:#fff;--ink:#0f1722;--soft:#5a6878;--rule:#e2e9f0;--band:#e9f5fd;--deep:#1219CD}
+  :root[data-theme="dark"]{--paper:#0d141d;--panel:#18212d;--ink:#e6eef6;--soft:#94a4b6;--rule:#26323f;--band:#1b2836;--deep:#93a7ff}
+
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--paper);color:var(--ink);
+       font:400 16.5px/1.78 -apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard","Noto Sans KR",sans-serif;
+       -webkit-font-smoothing:antialiased}
+  .wrap{max-width:660px;margin:0 auto;padding:0 var(--s5)}
+  a{color:var(--deep);text-underline-offset:3px}
+  :focus-visible{outline:2px solid var(--amber);outline-offset:3px;border-radius:4px}
+
+  header{padding:var(--s8) 0 var(--s5);border-bottom:1px solid var(--rule)}
+  .back{font-size:.88rem;color:var(--soft);text-decoration:none;display:inline-block;margin:0 0 var(--s4)}
+  .back:hover{color:var(--ink)}
+  h1{font-size:clamp(1.6rem,3.6vw,2.05rem);line-height:1.25;letter-spacing:-.03em;
+     margin:0 0 var(--s2);font-weight:750}
+  .updated{color:var(--soft);font-size:.86rem;margin:0}
+
+  /* 한 줄 요약 — 법률 문서에서 사람이 실제로 읽는 유일한 부분이 될 수도 있다.
+     그러니 여기에 진짜 결론을 적는다. 아래에서 뒤집지 않는다. */
+  .tldr{background:var(--band);border:1px solid var(--rule);border-radius:var(--s4);
+        padding:var(--s5);margin:var(--s6) 0 0;font-size:1.02rem}
+  .tldr p{margin:0}
+  .tldr b{font-weight:700}
+
+  main{padding:var(--s6) 0 var(--s8)}
+  h2{font-size:1.14rem;letter-spacing:-.015em;margin:var(--s7) 0 var(--s3);font-weight:700}
+  h2:first-of-type{margin-top:var(--s5)}
+  p{margin:0 0 var(--s3)}
+  ul{margin:0 0 var(--s3);padding-left:1.15em}
+  li{margin:0 0 var(--s2)}
+  b,strong{font-weight:660}
+  .soft{color:var(--soft)}
+  .small{font-size:.9rem}
+  pre{background:var(--panel);border:1px solid var(--rule);border-radius:10px;
+      padding:var(--s3) var(--s4);overflow-x:auto;margin:0 0 var(--s3)}
+  code{font:13px/1.7 ui-monospace,SFMono-Regular,Menlo,monospace}
+  p code{background:color-mix(in srgb,var(--ink) 7%,transparent);padding:2px 6px;border-radius:5px}
+
+  footer{padding:var(--s6) 0 var(--s8);border-top:1px solid var(--rule);
+         color:var(--soft);font-size:.89rem}
+  footer a{color:var(--soft)}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <a class="back" href="./">← ColdArchive</a>
+    <h1>プライバシーポリシー</h1>
+    <p class="updated">最終更新 2026年8月1日</p>
+    <div class="tldr"><p><b>ColdArchive は何も収集しません。</b> アプリ本体にはインターネットへ接続する権限そのものがないので、送ろうとしても送れません。以下は、それが本当かどうかご自身で確かめる方法と、唯一の例外である天気機能の説明です。</p></div>
+  </header>
+
+  <main>
+    <h2>アプリはインターネットに接続できません</h2>
+<p>ColdArchive 本体は macOS のサンドボックス内で動作し、ネットワーク権限（<code>com.apple.security.network.client</code>）を持っていません。この権限がなければ、macOS が接続そのものを遮断します。信じてくださいと言う代わりに、確かめる方法をお伝えします。</p>
+<pre><code>codesign -d --entitlements - /Applications/ColdArchive.app</code></pre>
+<p class="small soft">出力にはファイル権限とサンドボックスだけが並び、ネットワークの項目がないことをご確認いただけます。</p>
+
+<h2>ファイルの扱い方</h2>
+<p>アプリが見るのは<b>ご自身で選んだフォルダだけ</b>です。それ以外は macOS が遮断します。</p>
+<ul>
+  <li>ファイルを<b>移動するだけ</b>です。中身を読んだり解析したりしません。</li>
+  <li>元の場所にはショートカット（シンボリックリンク）が残ります。ファイル名もパスも変わりません。</li>
+  <li>保管先はお客様が指定したフォルダです。クラウド同期フォルダでも外付けドライブでもかまいません。<b>アプリはそこにファイルを置くだけ</b>です。アップロードは、すでにお使いの Google ドライブや iCloud のアプリが、それぞれのやり方で行います。</li>
+</ul>
+
+<h2>ログ</h2>
+<p>アプリは、何をいつ移動したかを記録します。この記録には<b>ファイルパスが含まれます。</b></p>
+<ul>
+  <li>保存先はこの Mac の中（<code>~/Library/Logs/</code>）で、<b>外に出ることはありません。</b></li>
+  <li>初期設定では 90 日後に自動で削除されます。期間は設定で変更できます。</li>
+  <li>私たちがこの記録を見ることはできません。トラブル対応のときも、<b>お客様が送ってくださったもの</b>しか見えません。</li>
+</ul>
+
+<h2>天気の背景 — 唯一の例外</h2>
+<p>マスコットの背景に実際の天気を表示する機能は<b>初期設定でオフ</b>です。オンにしなければ、この項目はまるごと該当しません。初期設定の「季節の風景」は日付を見るだけで、インターネットは一切使いません。</p>
+<p>オンにした場合、インターネットに接続するのは本体ではなく、<b>別に入る小さな補助プログラム</b>（WeatherBridge）です。この補助プログラムのほうは逆に、<b>ファイルに触る権限を持っていません。</b>権限を二つに分けている理由がこれです。</p>
+<ul>
+  <li><b>送られるもの：</b>入力した都市名だけです。宛先は Apple の WeatherKit で、その後の扱いは <a href="https://www.apple.com/legal/privacy/">Apple のプライバシーポリシー</a>に従います。</li>
+  <li><b>私たちのサーバーはありません。</b>Deep-On に届くものは何もありません。</li>
+  <li><b>位置情報：</b>「現在地から探す」を押したときだけ一度読み取ります。読み取った座標は都市名に変換するためだけに使われ、<b>保存も送信もしません</b>。残るのは都市名だけです。都市名を手で入力すれば、位置情報は最初から読み取りません。</li>
+</ul>
+
+<h2>このウェブサイト</h2>
+<p>このページには<b>アクセス解析も広告も、外部スクリプトも一つもありません。</b>フォントも画像もすべて同じ場所から配信しています。Cookie も設定しません。</p>
+<p>ひとつだけ正直に付け加えます。このサイトは <b>GitHub Pages</b> で公開されており、GitHub はサーバーログに訪問者の IP アドレスを記録します。この部分は私たちの管理外で、そのログにアクセスすることもできません。詳しくは <a href="https://docs.github.com/site-policy/privacy-policies/github-privacy-statement">GitHub のプライバシーに関する声明</a>をご覧ください。</p>
+
+<h2>お支払い</h2>
+<p>決済は <b>Paddle</b> が処理し、すべての購入において法律上の販売者は Paddle です。カード情報は Paddle に渡り、<b>私たちには届きません</b>。見ることも、保管することもできません。</p>
+<p>私たちに届くのは<b>メールアドレス</b>だけで、ライセンスキーをお送りするために使います。このアドレスは、キーを発行する Keygen と、メールを配信する Resend を経由します。それ以外の用途には使いません。ニュースレターもプロファイリングもなく、販売や提供も行いません。<a href="mailto:support@deepon.kr">support@deepon.kr</a> までお申し付けいただければ削除します。</p>
+
+<h2>お問い合わせ</h2>
+<p>この文書について分かりにくい点や誤りがあれば、<a href="mailto:support@deepon.kr">support@deepon.kr</a> または <a href="https://github.com/deep-on/coldarchive/issues">GitHub Issues</a> までお知らせください。2 営業日以内にお返事します。</p>
+
+  </main>
+
+  <footer>
+    <p>ColdArchive · Deep-On Inc. · <a href="mailto:support@deepon.kr">support@deepon.kr</a> · <a href="https://github.com/deep-on/coldarchive/issues">Issues</a></p>
+  </footer>
+</div>
+</body>
+</html>

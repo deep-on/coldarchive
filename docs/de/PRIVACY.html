@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Datenschutzerklärung — ColdArchive</title>
+<meta name="robots" content="index,follow">
+
+<!-- 랜딩과 같은 규칙: 바깥 서버를 하나도 부르지 않는다.
+     개인정보 처리방침 페이지가 추적 스크립트를 달고 있으면 그 자체로 자기모순이다. -->
+<style>
+  :root{
+    --paper:#fbfcfe; --panel:#ffffff; --ink:#0f1722; --soft:#5a6878; --rule:#e2e9f0;
+    --band:#e9f5fd; --amber:#FCA044; --deep:#1219CD;
+    --s1:4px; --s2:8px; --s3:12px; --s4:16px; --s5:24px; --s6:32px; --s7:48px; --s8:72px;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{--paper:#0d141d; --panel:#18212d; --ink:#e6eef6; --soft:#94a4b6; --rule:#26323f;
+          --band:#1b2836; --deep:#93a7ff}
+  }
+  :root[data-theme="light"]{--paper:#fbfcfe;--panel:#fff;--ink:#0f1722;--soft:#5a6878;--rule:#e2e9f0;--band:#e9f5fd;--deep:#1219CD}
+  :root[data-theme="dark"]{--paper:#0d141d;--panel:#18212d;--ink:#e6eef6;--soft:#94a4b6;--rule:#26323f;--band:#1b2836;--deep:#93a7ff}
+
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--paper);color:var(--ink);
+       font:400 16.5px/1.78 -apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard","Noto Sans KR",sans-serif;
+       -webkit-font-smoothing:antialiased}
+  .wrap{max-width:660px;margin:0 auto;padding:0 var(--s5)}
+  a{color:var(--deep);text-underline-offset:3px}
+  :focus-visible{outline:2px solid var(--amber);outline-offset:3px;border-radius:4px}
+
+  header{padding:var(--s8) 0 var(--s5);border-bottom:1px solid var(--rule)}
+  .back{font-size:.88rem;color:var(--soft);text-decoration:none;display:inline-block;margin:0 0 var(--s4)}
+  .back:hover{color:var(--ink)}
+  h1{font-size:clamp(1.6rem,3.6vw,2.05rem);line-height:1.25;letter-spacing:-.03em;
+     margin:0 0 var(--s2);font-weight:750}
+  .updated{color:var(--soft);font-size:.86rem;margin:0}
+
+  /* 한 줄 요약 — 법률 문서에서 사람이 실제로 읽는 유일한 부분이 될 수도 있다.
+     그러니 여기에 진짜 결론을 적는다. 아래에서 뒤집지 않는다. */
+  .tldr{background:var(--band);border:1px solid var(--rule);border-radius:var(--s4);
+        padding:var(--s5);margin:var(--s6) 0 0;font-size:1.02rem}
+  .tldr p{margin:0}
+  .tldr b{font-weight:700}
+
+  main{padding:var(--s6) 0 var(--s8)}
+  h2{font-size:1.14rem;letter-spacing:-.015em;margin:var(--s7) 0 var(--s3);font-weight:700}
+  h2:first-of-type{margin-top:var(--s5)}
+  p{margin:0 0 var(--s3)}
+  ul{margin:0 0 var(--s3);padding-left:1.15em}
+  li{margin:0 0 var(--s2)}
+  b,strong{font-weight:660}
+  .soft{color:var(--soft)}
+  .small{font-size:.9rem}
+  pre{background:var(--panel);border:1px solid var(--rule);border-radius:10px;
+      padding:var(--s3) var(--s4);overflow-x:auto;margin:0 0 var(--s3)}
+  code{font:13px/1.7 ui-monospace,SFMono-Regular,Menlo,monospace}
+  p code{background:color-mix(in srgb,var(--ink) 7%,transparent);padding:2px 6px;border-radius:5px}
+
+  footer{padding:var(--s6) 0 var(--s8);border-top:1px solid var(--rule);
+         color:var(--soft);font-size:.89rem}
+  footer a{color:var(--soft)}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <a class="back" href="./">← ColdArchive</a>
+    <h1>Datenschutzerklärung</h1>
+    <p class="updated">Zuletzt aktualisiert am 1. August 2026</p>
+    <div class="tldr"><p><b>ColdArchive erhebt nichts.</b> Die App hat gar nicht die Berechtigung, ins Internet zu gehen — sie könnte also nichts senden, selbst wenn sie wollte. Unten steht, wie du das selbst nachprüfst, und was die eine Ausnahme ist: das Wetter im Hintergrund.</p></div>
+  </header>
+
+  <main>
+    <h2>Die App kommt nicht ins Internet</h2>
+<p>ColdArchive läuft in der macOS-Sandbox und besitzt die Netzwerk-Berechtigung (<code>com.apple.security.network.client</code>) nicht. Ohne sie blockiert macOS die Verbindung von sich aus. Statt dich um Vertrauen zu bitten, zeigen wir dir, wie du nachsiehst:</p>
+<pre><code>codesign -d --entitlements - /Applications/ColdArchive.app</code></pre>
+<p class="small soft">In der Ausgabe stehen Dateirechte und die Sandbox — ein Netzwerkeintrag fehlt.</p>
+
+<h2>Was mit deinen Dateien passiert</h2>
+<p>Die App schaut ausschließlich in <b>Ordner, die du selbst ausgewählt hast</b>. Alles andere blockiert macOS.</p>
+<ul>
+  <li>Sie <b>verschiebt</b> Dateien. Sie liest oder analysiert nicht, was darin steht.</li>
+  <li>Am alten Platz bleibt eine Verknüpfung (Symlink). Namen und Pfade ändern sich nicht.</li>
+  <li>Das Ziel ist ein Ordner, den du bestimmst — ein Cloud-Ordner, eine externe Festplatte, was du möchtest. <b>Die App legt die Datei dort nur ab.</b> Das Hochladen übernimmt die Google-Drive- oder iCloud-App, die ohnehin schon läuft, auf ihre eigene Weise.</li>
+</ul>
+
+<h2>Protokolle</h2>
+<p>Die App hält fest, was sie wann verschoben hat. Diese Einträge <b>enthalten Dateipfade.</b></p>
+<ul>
+  <li>Sie liegen auf diesem Mac (<code>~/Library/Logs/</code>) und <b>verlassen ihn nie.</b></li>
+  <li>Standardmäßig werden sie nach 90 Tagen automatisch gelöscht. Den Zeitraum kannst du in den Einstellungen ändern.</li>
+  <li>Wir können sie nicht einsehen. Auch wenn wir bei einem Problem helfen, sehen wir nur das, was <b>du uns schickst.</b></li>
+</ul>
+
+<h2>Das Wetter im Hintergrund — die eine Ausnahme</h2>
+<p>Echtes Wetter hinter dem Maskottchen anzuzeigen ist <b>standardmäßig aus.</b> Schaltest du es nie ein, gilt dieser Abschnitt für dich gar nicht. Die Voreinstellung „Jahreszeiten“ liest nur das Datum und braucht überhaupt kein Internet.</p>
+<p>Schaltest du es ein, stellt die Verbindung nicht ColdArchive her, sondern <b>ein kleiner Helfer, der daneben installiert wird</b> (WeatherBridge). Und dieser Helfer hat umgekehrt <b>keinerlei Zugriff auf deine Dateien.</b> Genau dafür sind die Berechtigungen in zwei Teile getrennt.</p>
+<ul>
+  <li><b>Was gesendet wird:</b> der Städtename, den du eingetippt hast. Er geht an Apples WeatherKit. Was danach damit geschieht, regelt <a href="https://www.apple.com/legal/privacy/">Apples Datenschutzrichtlinie</a>.</li>
+  <li><b>Einen Server von uns gibt es nicht.</b> Bei Deep-On kommt nichts an.</li>
+  <li><b>Standort:</b> wird einmal gelesen, und nur wenn du „meine Stadt finden“ drückst. Die Koordinaten dienen allein dazu, einen Städtenamen nachzuschlagen, und werden <b>weder gespeichert noch übertragen</b> — übrig bleibt nur der Name. Tippst du die Stadt selbst ein, wird der Standort nie gelesen.</li>
+</ul>
+
+<h2>Diese Website</h2>
+<p>Diese Seite hat <b>keine Analyse, keine Werbung und kein einziges externes Skript.</b> Schriften und Bilder kommen alle vom selben Ort. Cookies werden nicht gesetzt.</p>
+<p>Eine ehrliche Fußnote: Diese Seite liegt bei <b>GitHub Pages</b>, und GitHub schreibt Besucher-IP-Adressen in seine Server-Logs. Darauf haben wir keinen Einfluss und auch keinen Zugriff. Einzelheiten stehen in <a href="https://docs.github.com/site-policy/privacy-policies/github-privacy-statement">GitHubs Datenschutzerklärung</a>.</p>
+
+<h2>Bezahlung</h2>
+<p>Die Zahlung wickelt <b>Paddle</b> ab; Paddle ist bei jedem Kauf der rechtliche Verkäufer. Deine Kartendaten gehen an Paddle und <b>erreichen uns nie</b> — wir sehen sie nicht und speichern sie nicht.</p>
+<p>Bei uns landet nur <b>deine E-Mail-Adresse</b>, damit wir dir deinen Lizenzschlüssel schicken können. Sie läuft über Keygen, das den Schlüssel ausstellt, und Resend, das die Mail zustellt. Für nichts anderes wird sie verwendet — kein Newsletter, kein Profiling, und verkauft oder weitergegeben wird sie nie. Schreib an <a href="mailto:support@deepon.kr">support@deepon.kr</a>, und wir löschen sie.</p>
+
+<h2>Fragen</h2>
+<p>Wenn hier etwas unklar oder falsch ist, schreib an <a href="mailto:support@deepon.kr">support@deepon.kr</a> oder <a href="https://github.com/deep-on/coldarchive/issues">öffne ein Issue</a>. Wir antworten innerhalb von zwei Werktagen.</p>
+
+  </main>
+
+  <footer>
+    <p>ColdArchive · Deep-On Inc. · <a href="mailto:support@deepon.kr">support@deepon.kr</a> · <a href="https://github.com/deep-on/coldarchive/issues">Issues</a></p>
+  </footer>
+</div>
+</body>
+</html>

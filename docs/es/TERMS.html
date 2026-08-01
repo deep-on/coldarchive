@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Términos del servicio — ColdArchive</title>
+<meta name="robots" content="index,follow">
+
+<!-- 랜딩과 같은 규칙: 바깥 서버를 하나도 부르지 않는다.
+     개인정보 처리방침 페이지가 추적 스크립트를 달고 있으면 그 자체로 자기모순이다. -->
+<style>
+  :root{
+    --paper:#fbfcfe; --panel:#ffffff; --ink:#0f1722; --soft:#5a6878; --rule:#e2e9f0;
+    --band:#e9f5fd; --amber:#FCA044; --deep:#1219CD;
+    --s1:4px; --s2:8px; --s3:12px; --s4:16px; --s5:24px; --s6:32px; --s7:48px; --s8:72px;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{--paper:#0d141d; --panel:#18212d; --ink:#e6eef6; --soft:#94a4b6; --rule:#26323f;
+          --band:#1b2836; --deep:#93a7ff}
+  }
+  :root[data-theme="light"]{--paper:#fbfcfe;--panel:#fff;--ink:#0f1722;--soft:#5a6878;--rule:#e2e9f0;--band:#e9f5fd;--deep:#1219CD}
+  :root[data-theme="dark"]{--paper:#0d141d;--panel:#18212d;--ink:#e6eef6;--soft:#94a4b6;--rule:#26323f;--band:#1b2836;--deep:#93a7ff}
+
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--paper);color:var(--ink);
+       font:400 16.5px/1.78 -apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard","Noto Sans KR",sans-serif;
+       -webkit-font-smoothing:antialiased}
+  .wrap{max-width:660px;margin:0 auto;padding:0 var(--s5)}
+  a{color:var(--deep);text-underline-offset:3px}
+  :focus-visible{outline:2px solid var(--amber);outline-offset:3px;border-radius:4px}
+
+  header{padding:var(--s8) 0 var(--s5);border-bottom:1px solid var(--rule)}
+  .back{font-size:.88rem;color:var(--soft);text-decoration:none;display:inline-block;margin:0 0 var(--s4)}
+  .back:hover{color:var(--ink)}
+  h1{font-size:clamp(1.6rem,3.6vw,2.05rem);line-height:1.25;letter-spacing:-.03em;
+     margin:0 0 var(--s2);font-weight:750}
+  .updated{color:var(--soft);font-size:.86rem;margin:0}
+
+  /* 한 줄 요약 — 법률 문서에서 사람이 실제로 읽는 유일한 부분이 될 수도 있다.
+     그러니 여기에 진짜 결론을 적는다. 아래에서 뒤집지 않는다. */
+  .tldr{background:var(--band);border:1px solid var(--rule);border-radius:var(--s4);
+        padding:var(--s5);margin:var(--s6) 0 0;font-size:1.02rem}
+  .tldr p{margin:0}
+  .tldr b{font-weight:700}
+
+  main{padding:var(--s6) 0 var(--s8)}
+  h2{font-size:1.14rem;letter-spacing:-.015em;margin:var(--s7) 0 var(--s3);font-weight:700}
+  h2:first-of-type{margin-top:var(--s5)}
+  p{margin:0 0 var(--s3)}
+  ul{margin:0 0 var(--s3);padding-left:1.15em}
+  li{margin:0 0 var(--s2)}
+  b,strong{font-weight:660}
+  .soft{color:var(--soft)}
+  .small{font-size:.9rem}
+  pre{background:var(--panel);border:1px solid var(--rule);border-radius:10px;
+      padding:var(--s3) var(--s4);overflow-x:auto;margin:0 0 var(--s3)}
+  code{font:13px/1.7 ui-monospace,SFMono-Regular,Menlo,monospace}
+  p code{background:color-mix(in srgb,var(--ink) 7%,transparent);padding:2px 6px;border-radius:5px}
+
+  footer{padding:var(--s6) 0 var(--s8);border-top:1px solid var(--rule);
+         color:var(--soft);font-size:.89rem}
+  footer a{color:var(--soft)}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <a class="back" href="./">← ColdArchive</a>
+    <h1>Términos del servicio</h1>
+    <p class="updated">Última actualización: 1 de agosto de 2026</p>
+    <div class="tldr"><p><b>Lo compras una vez y lo sigues usando.</b> Sin suscripción y sin renovación automática. Pero como esta aplicación mueve tus archivos, dejemos clara una cosa: <b>las copias de seguridad siguen siendo cosa tuya.</b> Abajo está el porqué, y lo que hemos construido para protegerte de todos modos.</p></div>
+  </header>
+
+  <main>
+    <h2>Qué estás comprando</h2>
+<p>Comprar ColdArchive te da <b>el derecho a usarlo sin límite de tiempo.</b></p>
+<ul>
+  <li><b>Licencia personal</b>: un Mac que uses tú.</li>
+  <li><b>Licencia familiar</b>: hasta tres Mac del mismo hogar.</li>
+  <li>No es una suscripción. Pagas una vez y no se te vuelve a cobrar.</li>
+  <li>Las actualizaciones dentro de la misma versión principal (1.0 → 1.4) son gratuitas. La siguiente versión principal (2.0) puede ser una mejora de pago; te lo diremos antes.</li>
+</ul>
+
+<h2>Reembolsos</h2>
+<p>El pago lo gestiona <b>Paddle</b>, que es el vendedor legal de esta compra, así que los reembolsos <b>se piden a Paddle y los decide Paddle</b>, no nosotros. Dínoslo en <b>14 días</b> y respaldaremos tu solicitud; nunca hemos discutido ninguna. Además, tu país puede darte un derecho legal de desistimiento (14 días en la UE, el EEE y el Reino Unido; 7 días en Corea del Sur) y, cuando eso te dé más, prevalece.</p>
+<p>Empieza aquí: <a href="https://paddle.net">paddle.net</a>, o escribe a <a href="mailto:support@deepon.kr">support@deepon.kr</a> y lo hacemos por ti.</p>
+
+<h2>Las copias de seguridad siguen siendo cosa tuya</h2>
+<p>No vamos a ser vagos con esto. ColdArchive es <b>una herramienta que mueve archivos</b>, y toda herramienta que mueve archivos conlleva un riesgo. Los discos fallan, las cuentas en la nube se bloquean y podemos tener errores que aún no hemos encontrado.</p>
+<p><b>Esta aplicación no es una copia de seguridad.</b> Sigue usando Time Machine o lo que uses habitualmente. Dicho esto, esto es lo que hemos construido para que el riesgo no recaiga solo en ti:</p>
+<ul>
+  <li><b>Primero ves la lista</b>, y no se toca nada hasta que tú lo apruebas.</li>
+  <li>Activa el <b>ensayo</b> y la aplicación solo observa durante unos días: cualquier archivo que se use aunque sea una vez sale de la lista.</li>
+  <li>En la carpeta de archivo se deja un <b>script de restauración</b>. Todo vuelve a su sitio sin esta aplicación, sin internet y sin siquiera el Mac con el que empezaste.</li>
+  <li>Los archivos dentro de repositorios git, los archivos ocultos y cualquier carpeta que excluyas nunca fueron candidatos.</li>
+</ul>
+
+<h2>Garantía y límites</h2>
+<p>Este software se proporciona <b>tal cual</b>. No ofrecemos garantías, expresas ni implícitas, incluida la de idoneidad para un fin concreto. En la medida en que la ley lo permita, Deep-On Inc. no responde por la pérdida de datos ni por daños indirectos o incidentales derivados del uso de este software, y en ningún caso la responsabilidad total superará <b>lo que hayas pagado.</b> Esta limitación no se aplica en caso de dolo o culpa grave, ni a los derechos que la ley te reconoce como consumidor.</p>
+<p>Es el párrafo estándar que lleva cualquier licencia de software, pero no significa que nos encojamos de hombros. Si algo sale mal, <a href="https://github.com/deep-on/coldarchive/issues">dínoslo.</a> Lo que se pueda arreglar, se arregla.</p>
+
+<h2>Lo que no puedes hacer</h2>
+<ul>
+  <li>No revendas el software ni compartas o distribuyas tu clave de licencia.</li>
+  <li>Nada de ingeniería inversa, copiar o redistribuir versiones modificadas. (El ayudante del tiempo se publicará aparte como código fuente; esa parte se rige por su propia licencia.)</li>
+</ul>
+
+<h2>Si estos términos cambian</h2>
+<p>La fecha de «última actualización» de arriba cambia con ellos. No <b>reduciremos retroactivamente los derechos</b> de quien ya haya comprado.</p>
+
+<h2>Ley aplicable</h2>
+<p>Estos términos se rigen por las leyes de la República de Corea y los litigios corresponden a los tribunales coreanos. Cuando la ley de consumo de tu país te otorgue derechos más amplios, esos derechos van primero.</p>
+
+<h2>Cómo contactarnos</h2>
+<p>Soporte y reclamaciones: <a href="mailto:support@deepon.kr">support@deepon.kr</a>. Respondemos en <b>dos días laborables</b>. Si después de eso sigue sin resolverse, dilo en el mismo hilo: va directo a la persona que escribió la aplicación.</p>
+
+  </main>
+
+  <footer>
+    <p>ColdArchive · Deep-On Inc. · <a href="mailto:support@deepon.kr">support@deepon.kr</a> · <a href="https://github.com/deep-on/coldarchive/issues">Issues</a></p>
+  </footer>
+</div>
+</body>
+</html>
