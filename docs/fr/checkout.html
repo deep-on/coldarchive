@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Votre commande — ColdArchive</title>
+
+<!-- ⚠️ **결제를 여기로 떼어 낸 이유.**
+     랜딩은 "외부 스크립트가 하나도 없다"를 약속하고, 개인정보 처리방침이 같은 말을 한다.
+     Paddle.js 를 랜딩에 넣으면 그 문장이 그 자리에서 거짓이 된다 —
+     검증 가능성을 파는 제품에서는 기능 하나보다 손해가 크다.
+     그래서 **사려고 스스로 넘어온 사람에게만** 스크립트가 붙는다.
+     (HTMLook 도 같은 구조의 checkout 페이지를 쓴다.)
+
+     ⚠️ Paddle 은 **승인된 도메인에서만** 라이브 결제창을 연다.
+        호스팅 결제 링크는 승인된 모바일 앱 회사에만 열려 있어 우리는 못 쓴다.
+        그래서 도메인 승인 전에는 아래 열기 시도가 실패하고, 그때 안내를 보여 준다. -->
+<style>
+  :root{
+    --paper:#fbfcfe; --panel:#fff; --ink:#0f1722; --soft:#5a6878; --rule:#e2e9f0;
+    --deep:#1219CD; --amber:#FCA044;
+    --s2:8px; --s3:12px; --s4:16px; --s5:24px; --s6:32px; --s7:48px;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{--paper:#0d141d;--panel:#18212d;--ink:#e6eef6;--soft:#94a4b6;--rule:#26323f;--deep:#93a7ff}
+  }
+  :root[data-theme="light"]{--paper:#fbfcfe;--panel:#fff;--ink:#0f1722;--soft:#5a6878;--rule:#e2e9f0;--deep:#1219CD}
+  :root[data-theme="dark"]{--paper:#0d141d;--panel:#18212d;--ink:#e6eef6;--soft:#94a4b6;--rule:#26323f;--deep:#93a7ff}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);
+       font:400 16.5px/1.7 -apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard","Noto Sans KR",sans-serif;
+       -webkit-font-smoothing:antialiased;display:flex;align-items:center;justify-content:center;
+       min-height:100vh;padding:var(--s5)}
+  .card{background:var(--panel);border:1px solid var(--rule);border-radius:18px;
+        padding:var(--s7) var(--s6);max-width:460px;width:100%}
+  h1{font-size:1.4rem;line-height:1.3;letter-spacing:-.02em;margin:0 0 var(--s5);font-weight:700}
+  .row{display:flex;justify-content:space-between;gap:var(--s4);padding:var(--s3) 0;
+       border-bottom:1px solid var(--rule)}
+  .row:first-of-type{border-top:1px solid var(--rule)}
+  .row b{font-weight:660}
+  .row .v{text-align:right;font-variant-numeric:tabular-nums}
+  .note{color:var(--soft);font-size:.9rem;margin:var(--s4) 0 0}
+  .go{margin-top:var(--s5);width:100%;padding:14px;border-radius:12px;border:0;cursor:pointer;
+      background:var(--deep);color:#fff;font:660 1rem/1 inherit}
+  .go:hover{filter:brightness(1.08)}
+  .go[disabled]{opacity:.55;cursor:default}
+  a{color:var(--deep);text-underline-offset:3px}
+  :focus-visible{outline:2px solid var(--amber);outline-offset:3px;border-radius:6px}
+  .msg{margin-top:var(--s5);padding:var(--s4);border-radius:12px;
+       border:1px solid var(--rule);background:color-mix(in srgb,var(--ink) 4%,transparent);
+       font-size:.94rem;display:none}
+  .msg b{display:block;margin-bottom:var(--s2)}
+  .back{display:inline-block;margin-top:var(--s5);font-size:.9rem;color:var(--soft)}
+
+  /* 언어 전환기 — 꼬리말에 조용히. 화면 위쪽을 차지할 만큼 중요하지 않다. */
+  .langs{margin:var(--s4) 0 0;font-size:.84rem;color:var(--soft)}
+  .langs a{color:var(--soft);text-decoration:none;border-bottom:1px solid transparent}
+  .langs a:hover,.langs a:focus-visible{color:var(--ink);border-bottom-color:currentColor}
+  .langs [aria-current]{color:var(--ink);font-weight:640}
+</style>
+<link rel="alternate" hreflang="x-default" href="https://deep-on.github.io/coldarchive/">
+<link rel="alternate" hreflang="en" href="https://deep-on.github.io/coldarchive/">
+<link rel="alternate" hreflang="ko" href="https://deep-on.github.io/coldarchive/ko/">
+<link rel="alternate" hreflang="ja" href="https://deep-on.github.io/coldarchive/ja/">
+<link rel="alternate" hreflang="de" href="https://deep-on.github.io/coldarchive/de/">
+<link rel="alternate" hreflang="fr" href="https://deep-on.github.io/coldarchive/fr/">
+<link rel="alternate" hreflang="es" href="https://deep-on.github.io/coldarchive/es/">
+</head>
+<body>
+<main class="card">
+  <h1>Votre commande</h1>
+
+  <div class="row"><span>Licence</span><b class="v" id="plan">—</b></div>
+  <div class="row"><span>Prix</span><b class="v" id="price">—</b></div>
+  <div class="row"><span>Paiement</span><span class="v">Paiement unique</span></div>
+
+  <p class="note">Le paiement est traité par Paddle, vendeur légal. Vos données bancaires ne nous parviennent jamais. La clé de licence arrive par e-mail juste après. <a href="TERMS.html#refunds">14 jours, sans justification.</a></p>
+
+  <button class="go" id="go">Passer au paiement</button>
+
+  <div class="msg" id="msg"></div>
+
+  <a class="back" href="./">← Retour</a>
+
+  <!-- ⚠️ 번역문을 JS 문자열 리터럴에 넣지 말 것.
+       영어 "couldn't" 와 프랑스어 "c'est" 의 아포스트로피가 리터럴을 깨뜨려
+       스크립트가 통째로 안 돌았다(빌드는 통과, 화면에서만 드러남).
+       여기 넣고 textContent 로 읽으면 어떤 부호가 와도 안전하다. -->
+  <div hidden id="i18n">
+    <span id="t-personal">Personnelle · 1 Mac</span>
+    <span id="t-family">Famille · jusqu'à 3 Mac</span>
+    <span id="t-errtitle">Le paiement n'a pas pu s'ouvrir</span>
+    <span id="t-errbody">Nous terminons la configuration chez notre prestataire. Écrivez à <a href="mailto:support@deepon.kr">support@deepon.kr</a> et nous vous enverrons un lien dès que c'est en ligne.</span>
+  </div>
+</main>
+
+<script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
+<script>
+// 이 토큰은 **공개용**이다. Paddle 의 client-side token 이고 브라우저에 노출되도록 설계돼 있다.
+// 비밀 키(API key)는 서버에만 있고 여기 없다.
+const TOKEN = 'live_4371f3e2956eaa5af71363e16f3';
+
+// 가격은 코드에 박는다. 쿼리스트링으로 받은 값을 그대로 넘기면
+// 아무 가격이나 꽂아 넣을 수 있다.
+const T = (id) => document.getElementById(id);
+const PLANS = {
+  personal: { price: 'pri_01kyxpp0m0v09wz2ek5wq06ey5', label: T('t-personal').textContent, amount: '$15.99' },
+  family:   { price: 'pri_01kyxpq3wvyvng3ywzayk4y892', label: T('t-family').textContent, amount: '$23.99' },
+};
+
+const q = new URLSearchParams(location.search).get('plan') || 'personal';
+const plan = PLANS[q] || PLANS.personal;
+document.getElementById('plan').textContent = plan.label;
+document.getElementById('price').textContent = plan.amount;
+
+const go = document.getElementById('go');
+const msg = document.getElementById('msg');
+
+function showError() {
+  msg.innerHTML = '';
+  const b = document.createElement('b'); b.textContent = T('t-errtitle').textContent;
+  const p = document.createElement('span'); p.innerHTML = T('t-errbody').innerHTML;
+  msg.append(b, p);
+  msg.style.display = 'block';
+}
+
+go.addEventListener('click', () => {
+  go.disabled = true;
+  try {
+    if (typeof Paddle === 'undefined') throw new Error('Paddle.js did not load');
+    Paddle.Initialize({
+      token: TOKEN,
+      eventCallback: (d) => {
+        if (!d) return;
+        if (d.name === 'checkout.completed') location.replace('thanks.html');
+        else if (d.name === 'checkout.error') {
+          go.disabled = false;
+          showError();
+        } else if (d.name === 'checkout.closed') go.disabled = false;
+      },
+    });
+    Paddle.Checkout.open({
+      items: [{ priceId: plan.price, quantity: 1 }],
+      settings: {
+        locale: document.documentElement.lang || 'en',
+        displayMode: 'overlay',
+        theme: matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light',
+      },
+    });
+  } catch (e) {
+    go.disabled = false;
+    showError();
+  }
+});
+</script>
+</body>
+</html>

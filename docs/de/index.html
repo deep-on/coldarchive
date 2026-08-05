@@ -280,7 +280,7 @@
   /* 정가는 작고 조용하게. 크기가 비슷하면 어느 쪽을 내는지 헷갈린다. */
   .amount s{font-size:1.1rem;font-weight:500;color:var(--soft);text-decoration-thickness:1.5px}
   /* 가짜 3D 그림자(box-shadow:0 2px 0)를 뺐다 — 앱스토어 버튼 흉내라 이 페이지와 안 맞는다 */
-  .buy{display:inline-block;margin:var(--s5) 0 var(--s2);padding:14px 38px;background:var(--amber);
+  .buy{display:block;text-align:center;text-decoration:none;display:inline-block;margin:var(--s5) 0 var(--s2);padding:14px 38px;background:var(--amber);
        color:#3a1f00;border:0;border-radius:10px;font:700 1.02rem/1 inherit;cursor:pointer;
        transition:filter .18s ease}
   .buy:hover{filter:brightness(1.06)}
@@ -582,35 +582,20 @@
         <div class="amount"><span>$15.99</span><s aria-label="Regulärer Preis 19 Dollar 99">$19.99</s></div>
         <p class="soft" style="margin-top:var(--s2)">Dauerlizenz · einmalig zahlen · kein Konto</p>
         <p class="small soft offer">Zum Start 20 % unter dem regulären Preis.</p>
-        <button class="buy" id="buy">Kaufen</button>
-        <p class="small soft famprice">Familienlizenz (3 Macs) 23,99 $ <s>29,99 $</s></p>
+        <a class="buy" href="checkout.html?plan=personal">Kaufen</a>
+        <p class="small soft famprice"><a href="checkout.html?plan=family">Familienlizenz (3 Macs) 23,99 $ <s>29,99 $</s></a></p>
       </div>
     </div>
   </div>
 </div>
 
-<dialog id="soon">
-  <img src="../assets/p_cheer.webp" width="86" alt="" aria-hidden="true">
-  <h3>Noch nicht ganz so weit</h3>
-  <p>Ehrlich gesagt: Ich finde gerade heraus, <b>ob das überhaupt jemand haben will</b> — abgerechnet wird deshalb noch nichts. Dieser Klick war genau die Antwort, die ich gesucht habe. Danke dafür.</p>
-  <p class="small soft">Soll ich Bescheid geben, wenn es so weit ist? <a href="https://github.com/deep-on/coldarchive/issues/1" target="_blank" rel="noopener">Benachrichtigen lassen</a></p>
-  <button class="close" id="close">Schließen</button>
-</dialog>
-
 <div class="wrap narrow">
 <footer>
-  <p>ColdArchive — gebaut von <a href="https://github.com/deep-on">Deep-On</a><br><a href="mailto:support@deepon.kr">support@deepon.kr</a> · <a href="PRIVACY.html">Datenschutz</a> · <a href="TERMS.html">AGB</a></p>
+  <p>ColdArchive — gebaut von <a href="https://github.com/deep-on">Deep-On</a><br><a href="mailto:support@deepon.kr">support@deepon.kr</a> · <a href="PRIVACY.html">Datenschutz</a> · <a href="TERMS.html">AGB</a> · <a href="TERMS.html#refunds">Rückerstattung</a></p>
   <p class="tiny">Diese Seite trackt dich nicht. Kein einziges externes Skript ist eingebunden.</p>
 <nav class="langs" aria-label="Language"><a href="../" hreflang="en">English</a> · <a href="../ko/" hreflang="ko">한국어</a> · <a href="../ja/" hreflang="ja">日本語</a> · <span aria-current="true">Deutsch</span> · <a href="../fr/" hreflang="fr">Français</a> · <a href="../es/" hreflang="es">Español</a></nav>
 </footer>
 </div>
 
-<script>
-  // 페이크 도어 — 결제를 받지 않는다. 누르면 곧바로 사실을 알려 준다.
-  // 가격을 보고도 누른 사람 수, 그게 우리가 재려는 값이다.
-  const d = document.getElementById('soon');
-  document.getElementById('buy').addEventListener('click', () => d.showModal());
-  document.getElementById('close').addEventListener('click', () => d.close());
-</script>
 </body>
 </html>

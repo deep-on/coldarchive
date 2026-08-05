@@ -280,7 +280,7 @@
   /* 정가는 작고 조용하게. 크기가 비슷하면 어느 쪽을 내는지 헷갈린다. */
   .amount s{font-size:1.1rem;font-weight:500;color:var(--soft);text-decoration-thickness:1.5px}
   /* 가짜 3D 그림자(box-shadow:0 2px 0)를 뺐다 — 앱스토어 버튼 흉내라 이 페이지와 안 맞는다 */
-  .buy{display:inline-block;margin:var(--s5) 0 var(--s2);padding:14px 38px;background:var(--amber);
+  .buy{display:block;text-align:center;text-decoration:none;display:inline-block;margin:var(--s5) 0 var(--s2);padding:14px 38px;background:var(--amber);
        color:#3a1f00;border:0;border-radius:10px;font:700 1.02rem/1 inherit;cursor:pointer;
        transition:filter .18s ease}
   .buy:hover{filter:brightness(1.06)}
@@ -613,38 +613,21 @@
         <div class="amount"><span>$15.99</span><s aria-label="정가 19달러 99센트">$19.99</s></div>
         <p class="soft" style="margin-top:var(--s2)">평생 사용 버전 · 한 번만 결제 · 계정 없음</p>
         <p class="small soft offer">출시를 기념해 정가에서 20% 낮춰 두었습니다.</p>
-        <button class="buy" id="buy">구매하기</button>
-        <p class="small soft famprice">가족 라이선스(맥 3대) $23.99 <s>$29.99</s></p>
+        <a class="buy" href="checkout.html?plan=personal">구매하기</a>
+        <p class="small soft famprice"><a href="checkout.html?plan=family">가족 라이선스(맥 3대) $23.99 <s>$29.99</s></a></p>
       </div>
     </div>
   </div>
 </div>
 
-<dialog id="soon">
-  <img src="../assets/p_cheer.webp" width="86" alt="" aria-hidden="true">
-  <h3>아직 준비 중입니다</h3>
-  <p>솔직히 말씀드리면 지금은 <b>살 분이 계신지 알아보는 중</b>이라 결제를 받지 않습니다.
-     방금 눌러 주신 것이 저희가 알고 싶던 답입니다. 고맙습니다.</p>
-  <p class="small soft">준비되면 알려드릴까요?
-     <a href="https://github.com/deep-on/coldarchive/issues/1" target="_blank" rel="noopener">알림 받기</a></p>
-  <button class="close" id="close">닫기</button>
-</dialog>
-
 <div class="wrap narrow">
 <footer>
   <p>ColdArchive — 만든 곳 <a href="https://github.com/deep-on">Deep-On</a><br><a href="mailto:support@deepon.kr">support@deepon.kr</a> · 
-     <a href="PRIVACY.html">개인정보 처리방침</a> · <a href="TERMS.html">서비스 약관</a></p>
+     <a href="PRIVACY.html">개인정보 처리방침</a> · <a href="TERMS.html">서비스 약관</a> · <a href="TERMS.html#refunds">환불</a></p>
   <p class="tiny">이 페이지는 방문자를 추적하지 않습니다. 외부 스크립트가 하나도 없습니다.</p>
 <nav class="langs" aria-label="Language"><a href="../" hreflang="en">English</a> · <span aria-current="true">한국어</span> · <a href="../ja/" hreflang="ja">日本語</a> · <a href="../de/" hreflang="de">Deutsch</a> · <a href="../fr/" hreflang="fr">Français</a> · <a href="../es/" hreflang="es">Español</a></nav>
 </footer>
 </div>
 
-<script>
-  // 페이크 도어 — 결제를 받지 않는다. 누르면 곧바로 사실을 알려 준다.
-  // 가격을 보고도 누른 사람 수, 그게 우리가 재려는 값이다.
-  const d = document.getElementById('soon');
-  document.getElementById('buy').addEventListener('click', () => d.showModal());
-  document.getElementById('close').addEventListener('click', () => d.close());
-</script>
 </body>
 </html>
