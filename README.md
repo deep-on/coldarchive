@@ -3,7 +3,7 @@
 Mac storage, the way iPhone Photos does it — files you don't use move to your
 cloud or an external drive, and a shortcut stays where the file was.
 
-**→ https://deep-on.github.io/coldarchive/**
+**→ https://coldarchive.deepon.kr/**
 
 ## The restore script is here too
 
@@ -16,11 +16,11 @@ Public domain — [take it](restore/README.md).
 
 ColdArchive itself is a paid macOS app; its source is not published here.
 
-- [English](https://deep-on.github.io/coldarchive/)
-- [한국어](https://deep-on.github.io/coldarchive/ko/)
-- [日本語](https://deep-on.github.io/coldarchive/ja/)
-- [Deutsch](https://deep-on.github.io/coldarchive/de/)
-- [Français](https://deep-on.github.io/coldarchive/fr/)
-- [Español](https://deep-on.github.io/coldarchive/es/)
+- [English](https://coldarchive.deepon.kr/)
+- [한국어](https://coldarchive.deepon.kr/ko/)
+- [日本語](https://coldarchive.deepon.kr/ja/)
+- [Deutsch](https://coldarchive.deepon.kr/de/)
+- [Français](https://coldarchive.deepon.kr/fr/)
+- [Español](https://coldarchive.deepon.kr/es/)
 
 Questions and bug reports: [Issues](https://github.com/deep-on/coldarchive/issues)

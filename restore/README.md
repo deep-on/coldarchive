@@ -1,6 +1,6 @@
 # RESTORE-ME
 
-This is the script [ColdArchive](https://deep-on.github.io/coldarchive/) drops into your
+This is the script [ColdArchive](https://coldarchive.deepon.kr/) drops into your
 archive folder. It puts every archived file back where it came from.
 
 It is published here so you can **read it before you trust it** — and so it keeps working
