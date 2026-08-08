@@ -284,6 +284,9 @@
        color:#3a1f00;border:0;border-radius:10px;font:700 1.02rem/1 inherit;cursor:pointer;
        transition:filter .18s ease}
   .buy:hover{filter:brightness(1.06)}
+  .herocta{display:flex;flex-wrap:wrap;align-items:center;gap:var(--s4);margin-top:var(--s5)}
+  .herocta .buy{margin:0;white-space:nowrap}
+  .herocta p{margin:0;max-width:34ch}
   .buy:active{filter:brightness(.94)}
   .famprice s{color:var(--soft);margin-left:4px}
 
@@ -343,6 +346,12 @@
               더블클릭하면 그대로 열립니다.</span>
           </div>
         </div>
+          <!-- ⚠️ 주소에 버전을 넣지 않는다. latest/download/<이름> 은 이름이 정확히
+               같아야 하므로, 1.0.1 을 내는 순간 버전이 박힌 링크는 404 가 된다. -->
+          <div class="herocta">
+            <a class="buy" href="https://github.com/deep-on/coldarchive/releases/latest/download/ColdArchive.zip">무료로 내려받기</a>
+            <p class="small soft">macOS 15 이상 · 애플 실리콘과 인텔 · 6.6 MB · 10 GB까지 무료</p>
+          </div>
       </div>
     </div>
   </div>
